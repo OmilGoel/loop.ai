@@ -1,3 +1,4 @@
+const { jobQueue, statuses } = require('../store/memory'); 
 function startWorker() {
   async function processNext() {
     if (jobQueue.length === 0) {
@@ -29,3 +30,6 @@ function startWorker() {
 
   processNext(); // Start processing loop
 }
+
+module.exports = { startWorker };
+
